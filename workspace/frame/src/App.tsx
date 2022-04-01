@@ -22,19 +22,26 @@ interface ISiteReady {
 }
 
 export const App: React.FC = () => {
-  const [selected, setSelected] = useState<View>(View.Client);
-  const [dappReady, setDappReady] = useState<ISiteReady>({ 2: true });
-  const blockchain = manifest.blockchain;
+  const [selected, setSelected] = useState<View>(View.Client)
+  const [dappReady, setDappReady] = useState<ISiteReady>({ 2: true })
+  const blockchain = manifest.blockchain
 
-  let network = ''; 
+  let network = ''
   const logo = (blockchain: String) => {
-    switch(blockchain.toLowerCase()) {
-      case "flow": return "https://info.decentology.com/assets/blockchains/flow/flow-dappstarter.png";
-      case "ethereum": return "https://info.decentology.com/assets/blockchains/ethereum/ethereum-dappstarter.png";
-      case "polygon": return "https://info.decentology.com/assets/blockchains/polygon/polygon-dappstarter.png";
-      case "solana": network='devnet'; return "https://info.decentology.com/assets/blockchains/solana/solana-dappstarter.png";
-      case "conflux": return "https://info.decentology.com/assets/blockchains/conflux/conflux-dappstarter.png";
-      case "avalanche": return "https://info.decentology.com/assets/blockchains/avalanche/avalanche-dappstarter.png";
+    switch (blockchain.toLowerCase()) {
+      case 'flow':
+        return 'https://info.decentology.com/assets/blockchains/flow/flow-dappstarter.png'
+      case 'ethereum':
+        return 'https://info.decentology.com/assets/blockchains/ethereum/ethereum-dappstarter.png'
+      case 'polygon':
+        return 'https://info.decentology.com/assets/blockchains/polygon/polygon-dappstarter.png'
+      case 'solana':
+        network = 'devnet'
+        return 'https://info.decentology.com/assets/blockchains/solana/solana-dappstarter.png'
+      case 'conflux':
+        return 'https://info.decentology.com/assets/blockchains/conflux/conflux-dappstarter.png'
+      case 'avalanche':
+        return 'https://info.decentology.com/assets/blockchains/avalanche/avalanche-dappstarter.png'
     }
   }
 
@@ -110,10 +117,7 @@ export const App: React.FC = () => {
         <div className="account">
           <div>
             <span className="avatar">
-              <img
-                src={ logo(String(blockchain)) }
-                alt=""
-              />
+              <img src={logo(String(blockchain))} alt="" />
             </span>
             <div className="capitalize">
               <strong>{manifest.name}</strong>
@@ -192,7 +196,9 @@ export const App: React.FC = () => {
         </div>
         <div className="main-footer">
           <div className="docs">
-            <a href="https://support.decentology.com/">Support Documentation</a>
+            <a href="https://support.decentology.com/">
+              Support Documentation Test
+            </a>
           </div>
           <span className="footer-left">Powered by Decentology</span>
           <span className="footer-right">
